@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Álbum Interactivo</title>
+    <link rel="stylesheet" href="Sorpresa.css">
+</head>
+<body>
+    <!-- Portada -->
+    <div id="cover" class="cover">
+        <h1 class="album-title">Moments With You ♡ </h1>
+        <p class="subtitle">By Didier and Melanie<br>Te quiero mucho niña bonita</p>
+        <div class="gif-container">
+            <img class="photo2" src="img/cat.jpg" alt="Foto 42">
+        </div>
+        <button class="open-button" onclick="openAlbum()">REMEMBER</button>
+    </div>
+
+    <div id="album" class="album" style="display: none;">
+        <div class="page">
+            <div class="photo" id="photo1"></div>
+            <div class="character" id="character">
+                <img src="img/denji.png" alt="Personaje" />
+            </div>
+            <div class="photo" id="photo2"></div>
+            <div class="message" id="message">AQUÍ VA A IR UN MENSAJE/FRASE</div>
+            <div class="photo" id="photo3"></div>
+        </div>
+    
+        <div class="navigation">
+            <button onclick="prevPage()">Anterior</button>
+            <button onclick="nextPage()">Siguiente</button>
+        </div>
+    </div>
+
+    <audio autoplay loop hidden>
+        <source src="better.mp3" type="audio/mpeg">
+
+    <script src="Sorp.js"></script>
+</body>
+</html>

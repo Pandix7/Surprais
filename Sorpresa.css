@@ -1,0 +1,197 @@
+/* Estilo general */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000000; /* Fondo negro */
+    color: #ff69b4; /* Texto en rosado */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Portada */
+.cover {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #1a1a1a; /* Fondo oscuro */
+    width: 90%;
+    max-width: 800px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.5); /* Sombra rosada */
+}
+.album-title {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    color: #ff69b4; /* Rosado */
+}
+
+.subtitle {
+    font-size: 1.2em;
+    color: #ff69b4;
+    margin-bottom: 20px;
+}
+
+.gif-container {
+    background: #333; /* Fondo gris oscuro */
+    width: 300px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    background: none;
+}
+
+
+.open-button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.open-button:hover {
+    background-color: #ff1493;
+}
+
+
+/* Álbum */
+.album {
+    width: 90%;
+    max-width: 800px;
+    background-color: #1a1a1a; /* Fondo oscuro */
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.5); /* Sombra rosada */
+    padding: 20px;
+    position: relative;
+}
+
+.page {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.photo {
+    width: 30%;
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    margin: 10px;
+    border: 2px solid #ff69b4; /* Borde rosado */
+}
+
+.photo2 {
+    width: 300px; /* Puedes ajustar el tamaño según tu preferencia */
+    height: 200px; /* Mantén la proporción o ajusta según tus necesidades */
+    object-fit: cover; /* Ajusta la imagen para que ocupe todo el espacio, recortando si es necesario */
+    border-radius: 10px; /* Redondear las esquinas (opcional) */
+    margin: 10px; /* Espacio entre imágenes */
+    border: 2px solid #ff69b4
+}
+
+.character {
+    width: 200px; /* Ajusta el tamaño según el diseño */
+    border-radius: 10px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 20px;
+    text-align: center;
+    background: none; /* Elimina el fondo gris */
+}
+
+
+
+.character img {
+    max-width: 100%; /* Ajusta el ancho máximo de la imagen del personaje */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    pointer-events: none; /* Evita que el personaje interfiera con los eventos de ratón */
+    background-color: transparent; /* Asegura que el fondo de la imagen sea transparente */
+}
+
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+}
+
+.message {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 1.2em;
+    margin: 10px 0;
+    background-color: none; /* Fondo gris oscuro */
+    color: #ff69b4; /* Texto rosado */
+}
+
+/* Navegación */
+.navigation button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.navigation button:hover {
+    background-color: #ff1493;
+}
+
+
+/* Tooltip para mostrar el diálogo */
+.character::after {
+    content: attr(data-dialogue); /* Usa el atributo data-dialogue para el texto */
+    position: absolute;
+    top: -50px; /* Ajusta para colocar el tooltip arriba */
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff; /* Color del texto */
+    font-size: 14px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Efecto para resaltar el texto */
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro semi-transparente */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Sombra del cuadro */
+    padding: 8px 12px; /* Espaciado interno */
+    border-radius: 8px; /* Esquinas redondeadas */
+    white-space: normal; /* Permite que el texto se ajuste si es muy largo */
+    max-width: 250px; /* Ancho máximo del tooltip */
+    text-align: center;
+    opacity: 0; /* Oculta por defecto */
+    visibility: hidden; /* Oculta por defecto */
+    transition: opacity 0.3s, visibility 0.3s; /* Efecto de transición */
+    z-index: 10; /* Asegura que esté encima de otros elementos */
+}
+
+.character:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+.character:hover {
+    transform: scale(1.1);
+    filter: grayscale(0%);
+}
